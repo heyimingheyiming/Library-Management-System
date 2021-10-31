@@ -1,0 +1,32 @@
+<view class="name">姓名：
+<input class="input" name="userName" placeholder="请输入姓名"
+bindinput="userNameInput"/>
+</view>
+
+<view class="Id">学号：
+<input class="input" name="userId" placeholder="请输入学号"
+bindinput="userIdInput"/>
+</view>
+
+<view class="telePhone">联系方式：
+<input class="input" name="telePhone" placeholder="请输入联系方式"
+bindinput="telePhoneInput"/>
+</view>
+
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      房间选择：{{array[index]}}
+    </view>
+  </picker>
+
+  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{new_data}}">
+    <view class="picker">
+      座位选择：{{new_data[index]}}
+    </view>
+  </picker>
+
+  <button type="primary" bindtap="getData">点击获取数据</button>
+  
+<view class="viewName" style="background-color:#fbf9fe">
+  <button class="loginBtn" bindtap="loginBtnClick">预约</button>
+</view>

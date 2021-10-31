@@ -1,0 +1,11 @@
+<button type="primary" bindtap='reserveBtn'>预约座位</button>
+
+<button type="primary" bindtap="getData">查看预约信息</button>
+<!-- <view wx:for="{{dataObj}}">{{item.number}}-{{item.state}}</view> -->
+
+
+<!-- <button type="primary" bindtap="addData">插入一条数据</button> -->
+
+<!-- <button type="primary" bindtap='reserveBtn'>跳转页面</button> -->
+<!-- <button type="primary" bindtap="getData">预约座位</button>
+<view wx:for="{{dataObj}}">{{item.number}}-{{item.state}}</view> -->
