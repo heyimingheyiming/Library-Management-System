@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class='container' >
+<view class='id-massage'>
+    <text>{{ne.name}}</text>
+    <text>{{ne.academy}}</text>
+    <text>{{ne.Stu_ID}}</text>
+</view>
+    <button bindtap="goBorrowMassage">借阅信息</button>
+    <button bindtap="goSeatMassage">选座信息</button>
+    <button bindtap="goIdMassage">身份信息</button>
+</view>
