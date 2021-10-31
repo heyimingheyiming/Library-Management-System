@@ -1,0 +1,2 @@
+<button type="public" bindtap="getData">点击获取数据</button>
+<view>{{dataObj.name}} {{dataObj.writer}}</view>
