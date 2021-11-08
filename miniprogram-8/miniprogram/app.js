@@ -17,3 +17,12 @@ App({
     this.globalData = {}
   }
 })
+
+// App({
+//   globalData:{
+//     index:5
+//   },
+//   onLaunch:function(){
+
+//   }
+// })
