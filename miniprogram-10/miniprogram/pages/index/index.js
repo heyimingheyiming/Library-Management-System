@@ -7,6 +7,13 @@ Page({
     
   },
 
+  btnSub(res){
+    var account = res.detail.value.account;
+    wx.navigateTo({
+      url: '../indexNext/indexNext?account='+account,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

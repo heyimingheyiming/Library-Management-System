@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/indexNext/indexNext",
     "pages/manage/manage",
-    "pages/person/person"
+    "pages/person/person",
+    "pages/check/check"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -20,19 +22,20 @@
         "selectedIconPath": "images/签到1.jpg"
       },
       {
+        "pagePath": "pages/person/person",
+        "text": "借还",
+        "iconPath": "images/个人中心0.jpg",
+        "selectedIconPath": "images/个人中心1.jpg"
+      },
+      {
         "pagePath": "pages/manage/manage",
         "text": "管理",
         "iconPath": "images/管理0.jpg",
         "selectedIconPath": "images/管理1.jpg"
-      },
-      {
-        "pagePath": "pages/person/person",
-        "text": "个人中心",
-        "iconPath": "images/个人中心0.jpg",
-        "selectedIconPath": "images/个人中心1.jpg"
       }
     ]
   },
   "sitemapLocation": "sitemap.json",
+  "usingComponents": {},
   "style": "v2"
 }

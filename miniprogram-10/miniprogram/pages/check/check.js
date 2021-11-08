@@ -1,44 +1,11 @@
-const db=wx.cloud.database()
-
+// pages/check/check.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    dataObject:""
-  },
 
-  getData(){
-    db.collection("User").where({
-      account:"19020031079"
-    }).get()
-    .then(res=>{
-      console.log(res)
-      this.setData({
-        dataObject:res.data
-      })
-    })
-  },
-
-  addData(){
-    wx.showLoading({
-      title: '数据加载中...',
-      mask:true
-    })
-    db.collection("User").add({
-      data:{
-        account:"19024031085",
-        name:"李安",
-        academy:"环境科学与工程学院",
-        isReserve:false,
-        password:"19024031085",
-        role:false
-      }
-    }).then(res=>{
-      console.log(res)
-      wx.hideLoading()
-    })
   },
 
   /**
