@@ -1,6 +1,7 @@
 // pages/borrowMassage/borrowMassage.js
 const db = wx.cloud.database({});
 const cont = db.collection('User');
+
 Page({
 
     /**
@@ -8,6 +9,7 @@ Page({
      */
     data: {
         ne:[],
+
     },
 
     /**
@@ -29,7 +31,6 @@ Page({
           }
         })
       },
-    
 
     /**
      * 生命周期函数--监听页面初次渲染完成

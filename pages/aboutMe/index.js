@@ -37,11 +37,7 @@ Page({
     })
   },
 
-  goSeatMassage:function(param){
-    wx.navigateTo({
-      url: '/pages/seatMassage/seatMassage',
-    })
-  },
+
 
   goIdMassage:function(param){
     wx.navigateTo({

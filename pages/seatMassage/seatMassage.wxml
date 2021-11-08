@@ -1,5 +1,0 @@
-<!--pages/seatMassage/seatMassage.wxml-->
-<view class="container">
-<text>已选座：</text>
-<text>{{ne.seat}}</text>
-</view>

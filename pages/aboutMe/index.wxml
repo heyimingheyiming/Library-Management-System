@@ -6,6 +6,5 @@
     <text>{{ne.Stu_ID}}</text>
 </view>
     <button bindtap="goBorrowMassage">借阅信息</button>
-    <button bindtap="goSeatMassage">选座信息</button>
     <button bindtap="goIdMassage">身份信息</button>
 </view>
