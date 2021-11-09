@@ -1,0 +1,37 @@
+<!--pages/modify0/modify0.wxml-->
+<view class="content">
+
+<view class="account">
+<view class="title">账号</view>
+<view class="num">
+<input bindinput="inputName0" placeholder="用户名"  placeholder-style="color:#999999;"/></view>
+</view>
+
+<view class="hr"></view>
+
+<view class="account">
+<view class="title">原密码</view>
+<view class="num">
+<input bindinput="inputPassword0" placeholder="请输入原密码" password/></view>
+</view>
+<view class="hr"></view>
+
+<view class="account">
+<view class="title">新密码</view>
+<view class="num">
+<input bindinput="inputPassword1" placeholder="请输入修改后密码" password/></view>
+</view>
+<view class="hr"></view>
+
+<view class="account">
+<view class="title">确认新密码</view>
+<view class="num">
+<input bindinput="inputPassword2" placeholder="请输入修改后密码" password/></view>
+</view>
+<view class="hr"></view>
+
+<button class="btn" type="primary"  bindtap="modified">修改密码</button>
+<view class="hr"></view>
+
+</view>
+
