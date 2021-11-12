@@ -1,22 +1,23 @@
 <!--pages/borrowMassage/borrowMassage.wxml-->
+<wxs  module="com" src='../wxs/subutil.wxs' />
 <view class='container' >
 <view class='borrowing'>
     <text>正在借阅中：</text>
-    <view class='book' wx:for="{{borrowing}}" wx:for-index="index">
-        <text>《{{borrowing[index].name}}》</text>
-        <text>作者：{{borrowing[index].writer}}</text>
-        <text>借阅时间：{{time[index]}}</text>
-        <text>ID：{{borrowing[index].bookId}}</text>
-        <text> * </text>
+    <view class='book' wx:for="{{ne.borrowing}}">
+        <text>《{{item[0]}}》</text>
+        <text>作者：{{item[1]}}</text>
+        <text>借阅时间：{{com.formatTime(item[2].$date,"yyyy年MM月dd日")}}</text>
+        <text>编号：{{item[3]}}</text>
     </view>
 </view>
 <view class='borrowed'>
     <text>曾经借阅过：</text>
-    <view class='book' wx:for="{{borrowed}}" wx:for-index="index">
-        <text>《{{borrowed[index].name}}》</text>
-        <text>作者：{{borrowed[index].writer}}</text>
-        <text>ID：{{borrowed[index].bookId}}</text>
-        <text> * </text>
+    <view class='book' wx:for="{{ne.borrowed}}">
+        <text>《{{item[0]}}》</text>
+        <text>作者：{{item[1]}}</text>
+        <text>借阅时间：{{com.formatTime(item[2].date,"yyyy年MM月dd日")}}</text>
+        <text>归还时间：{{com.formatTime(item[3].date,"yyyy年MM月dd日")}}</text>
+        <text>编号：{{item[4]}}</text>
     </view>
 </view>
 </view>
