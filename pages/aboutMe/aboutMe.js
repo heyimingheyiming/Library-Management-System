@@ -1,6 +1,7 @@
 //index.js
 const db = wx.cloud.database({});
 const cont = db.collection('User');
+var app = getApp()
 
 Page({
  
@@ -16,12 +17,13 @@ Page({
    */
   onLoad: function (options) {
     
-    var _this = this;
+    
     const db = wx.cloud.database({
       env:'cloud1-1gg3rpqx5b612ebc'
     })
     const cont =db.collection('User');
-    cont.doc("fa24ce1a616a43a700500e9252147a13").get({
+    const accountID=getApp().globalData.account;
+    cont.where({account:accountID}).get({
       success:res=>{
         console.log(res.data)
         this.setData({

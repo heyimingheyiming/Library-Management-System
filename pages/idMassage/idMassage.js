@@ -1,35 +1,36 @@
 // pages/idMassage/idMassage.js
 const db = wx.cloud.database({});
 const cont = db.collection('User');
+var app = getApp()
+
 Page({
+ 
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    ne:[],
+  },
 
-    /**
-     * 页面的初始数据
-     */
-    data: {
-        ne:[],
-    },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-    
-        var _this = this;
-        const db = wx.cloud.database({
-          env:'cloud1-1gg3rpqx5b612ebc'
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    console.log('in')
+    const db = wx.cloud.database({
+      env:'cloud1-1gg3rpqx5b612ebc'
+    })
+    const cont =db.collection('User');
+    const accountID=getApp().globalData.account;
+    cont.where({account:accountID}).get({
+      success:res=>{
+        console.log(res.data)
+        this.setData({
+          ne:res.data
         })
-        const cont =db.collection('User');
-        cont.doc("fa24ce1a616a43a700500e9252147a13").get({
-          success:res=>{
-            console.log(res.data)
-            this.setData({
-              ne:res.data
-            })
-          }
-        })
-
-      },
+      }
+    })
+  },
     
 
     /**
