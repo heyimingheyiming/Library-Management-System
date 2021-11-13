@@ -31,20 +31,32 @@
           "scene": null
         },
         {
-          "name": "pages/person/person",
-          "pathName": "pages/person/person",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "pages/index/index",
           "pathName": "pages/index/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/check/check",
-          "pathName": "pages/check/check",
+          "name": "pages/jhbook/jhbook",
+          "pathName": "pages/jhbook/jhbook",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/booknext/booknext",
+          "pathName": "pages/booknext/booknext",
           "scene": null
         }
       ]

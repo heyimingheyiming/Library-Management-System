@@ -1,4 +1,0 @@
-<view class="juzhong" style="background:url('../../images/blue.jpg')">
-  <button>借书</button>
-  <button>还书</button>
-</view>

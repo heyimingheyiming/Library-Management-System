@@ -5,7 +5,5 @@
     <input name="account" class="input" style="background:url('../../images/input.jpg')" placeholder=" 请输入学号"/>
     <view class="bu"><button size="mini" form-type="submit">确认</button></view>
     </form>
-    
   </view>
-  
 </view>

@@ -10,7 +10,7 @@
   width: 80%;
   height: 7vh;
   margin-top: 8rpx;
-  margin-left: 8%;
+  margin-left: 9%;
   font-family: sans-serif;
   font-size:40rpx;
   justify-content: center;
@@ -40,10 +40,11 @@
 
 .word{
   font-family: sans-serif;
-  font-size:60rpx;
+  font-size: 70rpx;
   color: rgb(255, 254, 254);
   margin-top: -15vh;
   margin-bottom: 5vh;
+  margin-left: -2%;
   display: flex;
   justify-content: center;
   align-items: center;

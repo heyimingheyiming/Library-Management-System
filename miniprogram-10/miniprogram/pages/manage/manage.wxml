@@ -1,7 +1,6 @@
-<view class="zong">
-  <text>图书管理</text>
-  <button style="margin-top:100rpx" bindtap="getData">查询书籍</button>
-  <button bindtap="addData">添加书籍</button>
-  <button bindtap="addData">删除书籍</button>
-  <button bindtap="addData">修改书籍</button>
+<view class="juzhong" style="background:url('../../images/blue.jpg')">
+  <text>中国海洋大学图书馆</text>
+  <button style="margin-top:170rpx" bindtap="btnQd">签到</button>
+  <button bindtap="btnJ">借书</button>
+  <button bindtap="btnH">还书</button>
 </view>

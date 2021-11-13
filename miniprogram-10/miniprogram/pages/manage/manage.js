@@ -41,6 +41,24 @@ Page({
     })
   },
 
+  btnQd(){
+    wx.navigateTo({
+      url: '../qiandao/qiandao',
+    })
+  },
+
+  btnJ(){
+    wx.navigateTo({
+      url: '../jhbook/jhbook?id=1',
+    })
+  },
+
+  btnH(){
+    wx.navigateTo({
+      url: '../jhbook/jhbook?id=2',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

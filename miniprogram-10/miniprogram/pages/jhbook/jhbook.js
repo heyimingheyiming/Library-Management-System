@@ -1,18 +1,45 @@
-// pages/person/person.js
+// pages/jhbook/jhbook.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    xuanze:'',
+    jieshu:false,
+    huanshu:false,
+  },
 
+  btnbook(res){
+    var account=res.detail.value.account;
+    var bookid=res.detail.value.bookid;
+    console.log(account);
+    console.log(bookid);
+    var xuan=this.data.xuanze;
+    console.log(xuan)
+    wx.navigateTo({
+      url: '../booknext/booknext?account='+account+'&bookid='+bookid+'&xuanze='+xuan,
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var choice = options.id;
+    this.setData({
+      xuanze:choice,
+    })
+    if(choice==1){
+      this.setData({
+        jieshu:true
+      })
+    }
+    if(choice==2){
+      this.setData({
+        huanshu:true
+      })
+    }
   },
 
   /**
