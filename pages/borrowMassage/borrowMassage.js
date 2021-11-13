@@ -44,7 +44,7 @@ Page({
           })
         }
         for(let i=0;i<this.data.ne[0].borrowingBookid.length;i++){
-          cont1.where({bookId:this.data.ne[0].borrowingBookid[i]}).get({
+          cont1.where({bookId:this.data.ne[0].borrowingBookid[i].bookid}).get({
             success:res2=>{
               console.log(res2.data)
               this.setData({
@@ -54,7 +54,7 @@ Page({
           })
           for(let i=0;i<this.data.ne[0].borrowingBookid.length;i++){
             this.setData({
-              time:this.data.time.concat(util.formatTimeTwo(this.data.ne[0].borrowTime[i],'Y-M-D h:m:s'))
+              time:this.data.time.concat(util.formatTimeTwo(this.data.ne[0].borrowingBookid[i].time,'Y-M-D h:m:s'))
             })
           }
         }
