@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataObject:""
+    dataObject:"",
+    panduan:true,
   },
 
   /**
@@ -19,11 +20,38 @@ Page({
     }).get()
     .then(res=>{
       console.log(res)
+      if(res.data.length==0){
+        this.setData({
+          panduan:false
+        })
+        wx.showModal({
+          title:'提示',
+          content:'当前学号不存在，请输入正确的学号！',
+          success:function(res){
+            if(res.confirm){
+              wx.navigateBack({
+                delta: 1,
+              })
+            }
+            else{
+              wx.redirectTo({
+                url: '../manage/manage',
+              })
+            }
+          }
+        })
+      }
       this.setData({
         dataObject:res.data
       })
     })
     
+  },
+
+  fanhui(){
+   wx.redirectTo({
+     url: '../manage/manage',
+   })
   },
 
   /**

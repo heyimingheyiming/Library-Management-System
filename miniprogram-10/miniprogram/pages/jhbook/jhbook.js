@@ -1,4 +1,5 @@
-// pages/jhbook/jhbook.js
+const db=wx.cloud.database();
+
 Page({
 
   /**
@@ -13,12 +14,43 @@ Page({
   btnbook(res){
     var account=res.detail.value.account;
     var bookid=res.detail.value.bookid;
+    var xuan=this.data.xuanze;
     console.log(account);
     console.log(bookid);
-    var xuan=this.data.xuanze;
     console.log(xuan)
-    wx.navigateTo({
-      url: '../booknext/booknext?account='+account+'&bookid='+bookid+'&xuanze='+xuan,
+    db.collection("User").where({
+      account:account
+    }).get()
+    .then(res=>{
+      if(res.data.length==0){
+        wx.showModal({
+          title:'提示',
+          content:'当前学号不存在，请输入正确的学号！',
+          success:function(res){
+            if(res.confirm){
+              wx.redirectTo({
+                url: '../jhbook/jhbook?id='+xuan,
+              })
+            }
+            else{
+              wx.redirectTo({
+                url: '../manage/manage',
+              })
+            }
+          }
+        })
+      }
+      else{
+        wx.navigateTo({
+          url: '../booknext/booknext?account='+account+'&bookid='+bookid+'&xuanze='+xuan,
+        })
+      }
+    })
+  },
+
+  fanhui(){
+    wx.redirectTo({
+      url: '../manage/manage',
     })
   },
 

@@ -1,4 +1,4 @@
-<view class="juzhong" style="background:url('../../images/bb.jpg')">
+<view class="juzhong" style="background:url('../../images/b2.jpeg')">
   <view class="in" wx:if="{{jieshu}}">借书成功</view>
   <view class="in" wx:if="{{huanshu}}">还书成功</view>
   <view class="xiang" wx:if="{{huanshu}}" style="margin-top:90rpx">书名：《{{bookname}}》</view>
@@ -6,5 +6,6 @@
   <view class="xiang1" style="background:url('../../images/input.jpg')">学号：{{account}}</view>
   <view class="xiang" wx:if="{{jieshu}}" style="margin-top:90rpx">借阅书籍：《{{bookname}}》</view>
   <view class="xiang" wx:if="{{jieshu}}">请于{{year}}年{{month}}月{{day}}日之前归还书籍！</view>
+  <view><button size="mini" bindtap="fanhui" style="margin-top:100rpx;">返回</button></view>
 </view>
   

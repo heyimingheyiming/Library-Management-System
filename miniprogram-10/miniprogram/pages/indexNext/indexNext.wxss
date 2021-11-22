@@ -49,3 +49,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.bu{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;  
+  text-align: center;
+  margin-top: 150rpx;
+  margin-left: -5%;
+ }

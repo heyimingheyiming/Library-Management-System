@@ -16,6 +16,12 @@ Page({
     huanshu:false,
   },
 
+  fanhui(){
+    wx.redirectTo({
+      url: '../manage/manage',
+    })
+   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -35,7 +41,11 @@ Page({
     var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
     //日  
     var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-    if(Y==12){
+    M=Number(M);
+    if((M==1||M==3||M==5||M==8||M==10) && D==31){
+      D=30;
+    }
+    if(M==12){
       Y=Y+1;
       M=1;
     }
