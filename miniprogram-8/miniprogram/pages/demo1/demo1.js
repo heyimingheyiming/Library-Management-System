@@ -103,13 +103,15 @@ Page({
     var dex=this.data.index;
     console.log(dex)
     var location_=this.data.array[dex];
-  db.collection("seats").where({
-    state:1,
+    db.collection("seats")
+    .where({
+      state:1,
   // number:this.data.index
    //location:this.data.index4
-   location:location_
+    location:location_
     // skzhID: _.in(data.wdhID)
-  }).count().then(async res => {
+    })
+    .count().then(async res => {
     let total = res.total;
     console.log('测试res.total', res.total)
     console.log('index变量',this.data.index)
@@ -128,26 +130,37 @@ Page({
       }).skip(i * 20).limit(20).get().then(async res => {
         new_data = new_data.concat(res.data)
         console.log(new_data)
+        var se=[];
+        for(let j=0;j<new_data.length;j++){
+          se[j]=new_data[j].num;
+          console.log(se[j])
+        }
+        for(let k=0;k<se.length;k++){
         this.setData({
-          // for(let j=0;j<new_data.length;j++){
-            [seat]:new_data.num
+           seat:se
+           //['seat[${j}]']:new_data[j].num
           //}
         })
-        console.log(seat)
+      }
+        var that=this
+        //console,log(se)
+        console.log(that.data.seat)
+        console.log('new_data2:',new_data)
         //let old_data = that.data.allRecords
         //           that.setData({
         //         allRecords : new_data.concat(new_data)
         // })
       })
-    }       
+    
+    console.log('new_data3:',new_data)
     var new_data_json = JSON.stringify(new_data) //将数据库查询的数据集合转换为json用于传递给下一界面
     // wx.navigateTo({
     //   url: '../jieguozhanshi/jieguozhanshi?banner=' + new_data_json //将数据传递给指定界面,用../跳转到两一个文件夹的页面
     // })
-  })
-},
-
-
+      }
+    })
+    
+  },
 
 
   // updateData(){

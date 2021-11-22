@@ -19,14 +19,15 @@ bindinput="telePhoneInput"/>
     </view>
   </picker>
 
-  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{new_data}}">
+  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{seat}}">
     <view class="picker">
-      座位选择：{{new_data[index]}}
+      座位选择：{{seat[index2]}}
     </view>
   </picker>
 
-  <button type="primary" bindtap="getData">点击获取数据</button>
+  
   
 <view class="viewName" style="background-color:#fbf9fe">
-  <button class="loginBtn" bindtap="loginBtnClick">预约</button>
+  <button class="loginbtn" bindtap="getData">点击获取数据</button>
+  <button class="loginbtn" bindtap="loginBtnClick">预约</button>
 </view>
