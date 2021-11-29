@@ -1,0 +1,53 @@
+.searchbar-result {
+    margin-top: 0;
+    font-size: 14px;
+  }
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+  }
+  .scroll-view {
+    width: 100%;
+    position: absolute;
+    top: 80rpx;
+    left: 30rpx;
+    background-color: white;
+    -moz-box-shadow: 0px 0px 2px #e2e2e2;
+    -webkit-box-shadow: 0px 0px 2px #e2e2e2;
+    box-shadow: 0px 0px 2px #e2e2e2;
+  }
+  .msg-item {
+    width: 100%;
+  }
+  .user-name {
+    width: 100%;
+    padding: 20rpx;
+    font-size: 33rpx;
+    border-bottom: 1px solid #e2e2e2;
+  }
+  /* 搜索框 */
+  .weui-search-bar__form {
+    position: relative;
+  }
+  .weui-search-bar__input {
+    height: 92rpx;
+  }
+  .weui-icon-search_in-box {
+    top: 22rpx;
+    margin-right: 10px;
+  }
+  .weui-search-bar__cancel-btn {
+    line-height: 70rpx;
+    margin-right: 15px;
+  }
+   
+  .weui-icon-clear {
+    top: 4rpx;
+  }
+  .flex-row {
+    background-color: #fff;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    /* -webkit-box-dire；*/
+  }

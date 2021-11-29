@@ -1,0 +1,29 @@
+/* pages/demo1/demo1.wxss */
+
+
+.id-massage{
+  display: flex;
+  flex-direction: column;
+}
+
+.loginbtn {
+  width: 80%;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .button {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.button::after {
+  border-radius: 98rpx;
+  border: 0; 
+} */

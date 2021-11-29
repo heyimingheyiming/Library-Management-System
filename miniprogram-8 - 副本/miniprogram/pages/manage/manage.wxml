@@ -1,0 +1,6 @@
+<view class="juzhong" style="background:url('../../images/blue.jpg')">
+  <text>中国海洋大学图书馆</text>
+  <button style="margin-top:170rpx" bindtap="btnQd">签到</button>
+  <button bindtap="btnJ">借书</button>
+  <button bindtap="btnH">还书</button>
+</view>

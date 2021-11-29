@@ -1,0 +1,9 @@
+<view class="total" style="background:url('../../images/OUCbackground.jpg')">
+  <view class="down">
+    <text class="word">学生签到</text>
+    <form bindsubmit="btnSub">
+    <input name="account" class="input" style="background:url('../../images/input.jpg')" placeholder=" 请输入学号"/>
+    <view class="bu"><button size="mini" form-type="submit">确认</button></view>
+    </form>
+  </view>
+</view>

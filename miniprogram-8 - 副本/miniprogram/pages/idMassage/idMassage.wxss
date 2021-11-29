@@ -1,0 +1,19 @@
+/* pages/idMassage/idMassage.wxss */
+.container{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    color: cornsilk;
+    background-color: rgb(101, 146, 228);
+}
+
+.id{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    color: cornsilk;
+    background-color: rgb(128, 170, 231);
+}
+
+
+

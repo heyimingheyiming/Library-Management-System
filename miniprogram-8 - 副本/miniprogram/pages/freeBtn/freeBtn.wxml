@@ -1,0 +1,11 @@
+<!--pages/freeBtn/freeBtn.wxml-->
+<!-- <text>pages/freeBtn/freeBtn.wxml</text> -->
+<span style="font-size:18px;"><view>
+  <button bindtap="freeBtn">释放座位</button>
+  <view >
+    <modal title="对话框" hidden="{<!-- -->{modalHidden}}" confirm-text="确定"
+    cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel">
+      您确定要释放座位吗？
+    </modal>
+  </view>
+</view></span>

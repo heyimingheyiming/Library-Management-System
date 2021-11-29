@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index3/index",
+    "pages/modify0/modify0",
+    "pages/index/index",
+    "pages/demo1/demo1",
+    "pages/index2/index",
+    "pages/manage/manage",
+    "pages/qiandao/qiandao",
+    "pages/indexNext/indexNext",
+    "pages/jhbook/jhbook",
+    "pages/booknext/booknext",
+    "pages/test/test",
+    "pages/aboutMe/aboutMe",
+    "pages/borrowMassage/borrowMassage",
+    "pages/idMassage/idMassage",
+    "pages/guanli/guanli",
+    "pages/reserveMessage/reserveMessage",
+    "pages/freeBtn/freeBtn"
+  ],
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#FFA500",
+    "list": [
+      {
+        "pagePath": "pages/index2/index",
+        "text": "书籍查找",
+        "iconPath": "logos/book1.png",
+        "selectedIconPath": "logos/book2.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "预约座位",
+        "iconPath": "logos/reserve1.png",
+        "selectedIconPath": "logos/reserve2.png"
+      },
+      {
+        "pagePath": "pages/aboutMe/aboutMe",
+        "text": "我的",
+        "iconPath": "logos/me1.png",
+        "selectedIconPath": "logos/me2.png"
+      }
+    ],
+    "window": {
+      "backgroundColor": "#F6F6F6",
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#F6F6F6",
+      "navigationBarTitleText": "云开发基础",
+      "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
+  },
+  "sitemapLocation": "sitemap75.json"
+}

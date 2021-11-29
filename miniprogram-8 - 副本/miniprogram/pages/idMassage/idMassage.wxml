@@ -1,0 +1,11 @@
+<!--pages/idMassage/idMassage.wxml-->
+<view class='container'>
+    <text>身份信息：</text>
+    <view class="id">
+        <text>姓名：{{ne[0].name}}</text>
+        <text>账号：{{ne[0].account}}</text>
+        <text>学院：{{ne[0].academy}}</text>
+        <text>邮箱：{{ne[0].email}}</text>
+        <text>电话：{{ne[0].phone}}</text>
+    </view>
+</view>

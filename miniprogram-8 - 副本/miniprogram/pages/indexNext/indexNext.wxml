@@ -1,0 +1,8 @@
+<view class="total" style="background:url('../../images/blu.jpg')">
+  <view class="waibu"></view>
+    <text class="word">学生签到</text>
+    <view class="xinxi" style="background:url('../../images/input.jpg')" wx:for="{{dataObject}}">姓名：{{item.name}}</view>
+    <view class="xinxi" style="background:url('../../images/input.jpg')" wx:for="{{dataObject}}">学号：{{item.account}}</view>
+    <view class="xinxi" style="background:url('../../images/input.jpg')" wx:for="{{dataObject}}">学院：{{item.academy}}</view>
+  <view class="qiandao">签到成功！</view>
+</view>

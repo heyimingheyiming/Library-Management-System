@@ -1,0 +1,51 @@
+.total{
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.xinxi{
+  flex-direction:column;
+  display: flex;
+  width: 80%;
+  height: 7vh;
+  margin-top: 8rpx;
+  margin-left: 9%;
+  font-family: sans-serif;
+  font-size:40rpx;
+  justify-content: center;
+  text-align:left;
+  border: solid 1px rgb(117, 205, 228);
+}
+
+.waibu{
+  height: 25vh;
+  width: 200px;
+  margin-left: 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.qiandao{
+  margin-top: 130rpx;
+  font-size: 60rpx;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.word{
+  font-family: sans-serif;
+  font-size: 70rpx;
+  color: rgb(255, 254, 254);
+  margin-top: -15vh;
+  margin-bottom: 5vh;
+  margin-left: -2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
