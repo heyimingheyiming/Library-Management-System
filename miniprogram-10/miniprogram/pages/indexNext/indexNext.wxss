@@ -50,6 +50,16 @@
   align-items: center;
 }
 
+.word1{
+  font-family: sans-serif;
+  font-size: 50rpx;
+  color: rgb(255, 254, 254);
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .bu{
   display: flex;
   margin-top: 20px;

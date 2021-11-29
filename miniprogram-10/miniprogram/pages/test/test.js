@@ -1,4 +1,5 @@
 const db=wx.cloud.database();
+const util = require('../../utils/util.js')
 
 Page({
 
@@ -13,16 +14,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const _ = db.command
-    db.collection("User").doc('8937eaa96167969d11121db349ad3aca').update({
-      data:{
-        //borrowingBookid:_.pull(_.in(['19381024']))
-        borrowingBookid:_.pull({bookid:'19381023'})
-        //borrowTime:_.pull(1636682420)
-      }
-    }).then(res=>{
-      console.log(res)
-    })
+    //获取当前时间戳  
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    console.log(timestamp);
+    console.log("时间戳转日期:",util.formatTimeTwo(timestamp, 'Y-M-D h:m:s'));
+
   },
 
   /**

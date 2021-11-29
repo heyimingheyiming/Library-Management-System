@@ -1,4 +1,5 @@
 const db=wx.cloud.database()
+const util = require('../../utils/util.js')
 
 Page({
 
@@ -8,6 +9,9 @@ Page({
   data: {
     dataObject:"",
     panduan:true,
+    xuesheng:true,
+    reserveFlag:false,
+    chaoshi:false,
   },
 
   /**
@@ -15,6 +19,9 @@ Page({
    */
   onLoad: function (options) {
     var a = options.account;
+    //获取当前时间戳  
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
     db.collection("User").where({
       account:a
     }).get()
@@ -41,11 +48,68 @@ Page({
           }
         })
       }
+      else{
+        if(res.data[0].reserveTime==0){
+          this.setData({
+            reserveFlag:true,
+            xuesheng:false,
+          })
+        }
+        else{
+          this.setData({
+            chaoshi:true,
+            xuesheng:false,
+          })
+          var pastTime = res.data[0].reserveTime;
+          var nowTime = timestamp;
+          if(nowTime-pastTime>3600){
+            var id = res.data[0]._id;
+            var loca = res.data[0].seatLocation;
+            var n = res.data[0].seatNumber;
+            console.log(loca);
+            console.log(n);
+            db.collection("User").doc(id).update({
+              data:{
+                seatLocation:"",
+                seatNumber:0,
+              }
+            }).then(res=>{
+              console.log("success1")
+            })
+            db.collection("seats").where({
+              location:loca,
+              num:n,
+            }).get()
+            .then(res=>{
+              //var i=res.data[0]._id;
+              //console.log(i);
+              db.collection("seats").doc('fa24ce1a6173c0e501cce1d95c765a9f').update({
+                data:{
+                  state:1,
+                }
+              }).then(res=>{
+                console.log(res)
+                console.log("座位状态更新成功")
+              })
+            })
+          }
+          else{
+            var id = res.data[0]._id;
+            db.collection("User").doc(id).update({
+            data:{
+              signTime:timestamp
+            }
+           })
+            .then(res=>{
+            console.log("success")
+            })
+          }
+        }
+      }
       this.setData({
         dataObject:res.data
       })
     })
-    
   },
 
   fanhui(){
