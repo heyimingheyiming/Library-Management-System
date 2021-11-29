@@ -1,6 +1,7 @@
-// pages/idMassage/idMassage.js
+// pages/borrowedMassage/borrowedMassage.js
 const db = wx.cloud.database({});
 const cont = db.collection('User');
+const util = require('../borrowedMassage/util.js')
 var app = getApp()
 
 Page({
@@ -10,13 +11,16 @@ Page({
    */
   data: {
     ne:[],
+    borrowed:[],
+    borrowing:[],
+    time:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('in')
+    
     const db = wx.cloud.database({
       env:'cloud1-1gg3rpqx5b612ebc'
     })
@@ -28,24 +32,32 @@ Page({
         this.setData({
           ne:res.data
         })
+        const cont1=db.collection('Book');
+        for(let i=0;i<this.data.ne[0].borrowedBookid.length;i++){
+          cont1.where({bookId:this.data.ne[0].borrowedBookid[i]}).get({
+            success:res1=>{
+              console.log(res1.data)
+              this.setData({
+                borrowed:this.data.borrowed.concat(res1.data)
+              })
+            }
+          })
+        }
+        
+        
+        
+        
       }
     })
   },
 
-  amend:function(){
-    wx.redirectTo({
-      url: '/pages/idChange/idChange'
-    })
-  },
-    
-  logout:function(){
-    
-        //并重定向到登录页面
-        wx.redirectTo({
-          url: '../index3/index'
-        })
-      
-  },
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+
+    },
+
     /**
      * 生命周期函数--监听页面显示
      */

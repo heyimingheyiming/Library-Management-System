@@ -10,13 +10,4 @@
         <text> * </text>
     </view>
 </view>
-<view class='borrowed'>
-    <text>曾经借阅过：</text>
-    <view class='book' wx:for="{{borrowed}}" wx:for-index="index">
-        <text>《{{borrowed[index].name}}》</text>
-        <text>作者：{{borrowed[index].writer}}</text>
-        <text>ID：{{borrowed[index].bookId}}</text>
-        <text> * </text>
-    </view>
-</view>
 </view>

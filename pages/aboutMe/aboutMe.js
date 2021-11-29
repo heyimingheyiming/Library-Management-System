@@ -39,6 +39,12 @@ Page({
     })
   },
 
+  goBorrowedMassage:function(param){
+    wx.navigateTo({
+      url: '/pages/borrowedMassage/borrowedMassage',
+    })
+  },
+
 
 
   goIdMassage:function(param){

@@ -1,4 +1,4 @@
-// pages/idMassage/idMassage.js
+// pages/idChange/idChange.js
 const db = wx.cloud.database({});
 const cont = db.collection('User');
 var app = getApp()
@@ -10,6 +10,8 @@ Page({
    */
   data: {
     ne:[],
+    changeemail:'',
+    changephone:''
   },
 
   /**
@@ -32,20 +34,41 @@ Page({
     })
   },
 
-  amend:function(){
+  ok:function(){
+    const accountID=getApp().globalData.account;
+    db.collection('User').doc(accountID).update({
+      data:{
+        email:this.changeemail,
+        phone:this.changephone,
+      },
+      success(res){
+        console.log(res)
+      }
+    })  
     wx.redirectTo({
-      url: '/pages/idChange/idChange'
+      url: '../idMassage/idMassage'
     })
   },
-    
-  logout:function(){
-    
-        //并重定向到登录页面
-        wx.redirectTo({
-          url: '../index3/index'
+
+    changeemail:function(e){
+        this.setData({
+            changeemail:e.detail.value,
         })
-      
-  },
+    },
+
+    changephone:function(e){
+        this.setData({
+            changephone:e.detail.value,
+        })
+    },
+
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+
+    },
+
     /**
      * 生命周期函数--监听页面显示
      */
