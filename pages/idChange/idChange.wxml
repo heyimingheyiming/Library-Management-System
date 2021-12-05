@@ -5,10 +5,9 @@
         <text>账号：{{ne[0].account}}</text>
         <text>学院：{{ne[0].academy}}</text>
         <text>邮箱：</text>
-        <input bindinput="changeemail" value="{{ne[0].email}}"  placeholder="{{changeemail}}"></input>
+        <input type="text" placeholder="请输入你的邮箱" 	bindinput="changeemail" value="{{ne[0].email}}" confirm-type="done"></input>
         <text>电话：</text>
-        <input bindinput="changephone" value="{{ne[0].phone}}"  placeholder="{{changephone}}"></input>
-        <text>邮箱：{{ne[0].email}}</text>
+        <input type="number" placeholder="请输入你的电话号码" 	bindinput="changephone" value="{{ne[0].phone}}"  maxlength="11" confirm-type="done"></input>
     </view>
 </view>
 

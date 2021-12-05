@@ -10,8 +10,8 @@ Page({
    */
   data: {
     ne:[],
-    changeemail:'',
-    changephone:''
+    email:'',
+    phone:''
   },
 
   /**
@@ -28,37 +28,49 @@ Page({
       success:res=>{
         console.log(res.data)
         this.setData({
-          ne:res.data
+          ne:res.data,
+          email:res.data[0].email,
+          phone:res.data[0].phone
         })
       }
     })
   },
 
   ok:function(){
+    const db = wx.cloud.database({
+      env:'cloud1-1gg3rpqx5b612ebc'
+    })
+    const cont =db.collection('User');
     const accountID=getApp().globalData.account;
-    db.collection('User').doc(accountID).update({
-      data:{
-        email:this.changeemail,
-        phone:this.changephone,
-      },
-      success(res){
-        console.log(res)
+    cont.where({account:accountID}).get({
+      success:res=>{
+          var _ID=res.data[0]._id
+          db.collection('User').doc(_ID).update({
+            data:{
+              email:this.data.email,
+              phone:this.data.phone,
+            },
+            success(res){
+              console.log(res)
+            }
+          })  
       }
-    })  
+
+    })
     wx.redirectTo({
-      url: '../idMassage/idMassage'
+      url: '../aboutMe/aboutMe'
     })
   },
 
-    changeemail:function(e){
+    changeemail(e){
         this.setData({
-            changeemail:e.detail.value,
+            email:e.detail.value
         })
     },
 
-    changephone:function(e){
+    changephone(e){
         this.setData({
-            changephone:e.detail.value,
+            phone:e.detail.value
         })
     },
 
