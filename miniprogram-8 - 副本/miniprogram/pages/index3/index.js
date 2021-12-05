@@ -11,7 +11,7 @@ Page({
     
   },
   inputName:function(event){
-   app.globalData.user_ID=event.detail.value
+   app.globalData.account=event.detail.value
   },
   inputPassword(event){ 
     app.globalData.password=event.detail.value
@@ -24,7 +24,7 @@ Page({
  
   login(){
     //let that=this;
-    admin.where({account:app.globalData.user_ID}).get().then(res=> {
+    admin.where({account:app.globalData.account}).get().then(res=> {
       if(res.data.length==0){
         console.log("数据库中无该用户记录，请核实account");
         wx.showToast({

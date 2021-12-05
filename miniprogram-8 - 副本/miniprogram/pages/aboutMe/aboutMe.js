@@ -22,7 +22,7 @@ Page({
       env:'cloud1-1gg3rpqx5b612ebc'
     })
     const cont =db.collection('User');
-    const accountID=getApp().globalData.account;
+    const accountID=app.globalData.account;
     cont.where({account:accountID}).get({
       success:res=>{
         console.log(res.data)

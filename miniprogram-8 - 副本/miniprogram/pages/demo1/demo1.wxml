@@ -39,8 +39,6 @@ bindinput="telePhoneInput"/>
   </picker>
 
 
-  
 <view class="viewName" style="background-color:#fbf9fe">
-  <button class="loginbtn" bindtap="getData">点击获取数据</button>
   <button class="loginbtn" bindtap="loginBtnClick">预约</button>
 </view>

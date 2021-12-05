@@ -1,15 +1,13 @@
-<!--pages/reserveMessage/reserveMessage.wxml-->
+<!-- pages/reserveMessage/reserveMessage.wxml -->
 <!-- <text>pages/reserveMessage/reserveMessage.wxml</text> -->
 <view class='container' >
-  <text>姓名: </text>
-  <text>{{ne[0].name}}</text>
+  <text>姓名:{{ne[0].name}} </text>
+  <text></text>
 
 <view class='id-massage'>
   <text>学号:{{ne[0].account}} </text>
-  <!-- <text>{{ne[0].account}}</text> -->
   </view>
  
-
  <view class='id-massage'>
   <text>联系电话: {{ne[0].phone}}</text>
   </view>
@@ -21,12 +19,17 @@
 
   <view class='id-massage'>
     <text>预约座位号:{{ne[0].seatNumber}} </text>
-
   </view>
   
   <view class='id-massage'>
     <text>预约时间:{{time}} </text>
+  </view>
 
+  <view wx:if="{{ne[0].signTime!=0}}">
+    <text>签到时间:{{signTime}} </text>
+  </view>
+  <view wx:else>
+    您未签到！
   </view>
   <!-- <view class='id-massage'> -->
 </view>

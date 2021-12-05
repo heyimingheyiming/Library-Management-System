@@ -1,5 +1,6 @@
 // pages/reserveMessage/reserveMessage.js
 const db=wx.cloud.database();
+const util = require('../reserveMessage/util.js')
 Page({
 
   /**
@@ -7,14 +8,32 @@ Page({
    */
   data: {
      ne:[],
-     time:[]
+     time:[],
+     signTime:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-   
+  onLoad: async function (options) {
+    const accountID=getApp().globalData.account;
+    const cont =db.collection('User');
+    await cont.where({account:accountID}).get().then(res=>{
+        console.log("Message查询用户：",res.data)
+        this.setData({
+          // ne:[],
+          ne:res.data,
+          // time:this.data.time.concat(util.formatTimeTwo(this.data.ne[0].reserveTime,'Y-M-D h:m:s'))
+        })
+        console.log("Message ne:",this.data.ne)
+        console.log("预约时间1：",this.data.time)
+        this.setData({
+          time:this.data.time.concat(util.formatTimeTwo(this.data.ne[0].reserveTime,'Y-M-D h:m:s'))
+        })
+        this.setData({
+          signTime:this.data.signTime.concat(util.formatTimeTwo(this.data.ne[0].signTime,'Y-M-D h:m:s'))
+        })
+      })
   },
 
   /**
@@ -27,26 +46,12 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow:function () {
     this.setData({
-      time:[]
+      time:[],
+      signTime:[]
     })
-    const accountID=getApp().globalData.account;
-    const cont =db.collection('User');
-    cont.where({account:accountID}).get({
-      success:res=>{
-        console.log("Message查询用户：",res.data)
-        this.setData({
-          ne:res.data,
-          time:this.data.time.concat(util.formatTimeTwo(this.data.ne[0].reserveTime,'Y-M-D h:m:s'))
-        })
-        console.log("预约时间1：",time)
-        this.setData({
-          time:this.data.time.concat(util.formatTimeTwo(this.data.ne[0].reserveTime,'Y-M-D h:m:s'))
-        })
-        
-      }
-    })
+    
     console.log("预约时间2：",time)
   },
 

@@ -14,7 +14,11 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      password :"",
+      username :"",
+      userid :""
+    };
   }
 })
 

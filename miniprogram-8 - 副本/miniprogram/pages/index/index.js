@@ -1,17 +1,17 @@
 const db=wx.cloud.database()//连接数据库
 Page({
-  freeBtn:function(options){
+  freeBtn:async function(options){
     const accountID=getApp().globalData.account;
     const cont =db.collection('User');
-    cont.where({account:accountID}).get({
-      success:res=>{
+    await cont.where({account:accountID}).get()
+    .then(res =>{
         console.log("onShow内res:",res.data)
         this.setData({
+          ne:[],
           ne:res.data
         })
         // console.log("找到的ne值：",ne)
-      }
-    })
+      })
     var user=this.data.ne;
     console.log("freeBtn内user:",user)
     if(user[0].reserveTime==0){
@@ -22,7 +22,7 @@ Page({
       })
     }
     else{
-      db.collection("User")
+      await db.collection("User")
     .where({
       account:user[0].account
     }).update({
@@ -31,11 +31,11 @@ Page({
       seatLocation:'',
       seatNumber:0
       }
-    }).then(res=>{
+    }).then(async res=>{
       console.log(res)
     })
     
-    db.collection("seats")
+    await db.collection("seats")
     .where({
       location:user[0].location,
       num:user[0].seatNumber
@@ -43,7 +43,7 @@ Page({
       data:{
        state:1
       }
-    }).then(res=>{
+    }).then(async res=>{
       console.log("更新后的座位信息:",res)
     })
 
@@ -55,18 +55,17 @@ Page({
   })
     }
   },
-  MessageBtn:function(options){
+  MessageBtn:async function(options){
     const accountID=getApp().globalData.account;
     const cont =db.collection('User');
-    cont.where({account:accountID}).get({
-      success:res=>{
-        console.log("onShow内res:",res.data)
-        this.setData({
-          ne:res.data
-        })
-        // console.log("找到的ne值：",ne)
-      }
+    await cont.where({
+      account:accountID
+    }).get().then(async res=>{
+      console.log("onShow内res:",res.data)
+      this.setData({
+        ne:res.data
     })
+  })
     var user=this.data.ne;
     console.log("user:",user)
     if(user[0].reserveTime==0){
@@ -82,18 +81,17 @@ Page({
      })
     }
   },
- reserveBtn:function(options){
+ reserveBtn:async function(options){
   const accountID=getApp().globalData.account;
   const cont =db.collection('User');
-  cont.where({account:accountID}).get({
-    success:res=>{
+  await cont.where({account:accountID}).get().then(res=>{
       console.log("onShow内res:",res.data)
       this.setData({
+        ne:[],
         ne:res.data
       })
       // console.log("找到的ne值：",ne)
-    }
-  })
+    })
   var user=this.data.ne;
   console.log("user:",user)
   if(user[0].reserveTime!=0){
@@ -137,7 +135,17 @@ Page({
     this.setData({
       dataObj:"",
     })
-    
+    // const accountID=getApp().globalData.account;
+    // const cont =db.collection('User');
+    // await cont.where({account:accountID}).get()
+    // .then(res =>{
+    //     console.log("onShow内res:",res.data)
+    //     this.setData({
+    //       ne:[],
+    //       ne:res.data
+    //     })
+    //     // console.log("找到的ne值：",ne)
+    //   })
   },
 
   /**

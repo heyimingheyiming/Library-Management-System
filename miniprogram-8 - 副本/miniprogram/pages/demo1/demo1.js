@@ -25,7 +25,9 @@ Page({
   },
  
   bindPickerChange:function(e){
+    console.log("ne[0]:",this.data.ne[0])
     console.log('picker发送选择改变，携带值为', e.detail.value)
+    new_data=[]
     this.setData({
       index2:''
     })
@@ -48,33 +50,26 @@ Page({
     })
     .count().then(async res => {
     let total = res.total;
-    console.log('测试res.total', res.total)
-    console.log('index变量',this.data.index)
-   // console.log('变量',this.data.array[1])
     //   // 计算需分几次取
     const batchTimes = Math.ceil(total / 20)
     // 循环读取数据库，并将读取的数据存放至new_data
     for (let i = 0; i < batchTimes; i++) {
       await db.collection("seats").where({
        state:1,
-      // number:this.data.index
-      // location:this.data.index4
-       //location:'一楼报纸阅览区'
       location:location_
-        //skzhID: _.in(data.wdhID)
       }).skip(i * 20).limit(20).get().then(async res => {
         new_data = new_data.concat(res.data)
-        console.log(new_data)
         var se=[];
         for(let j=0;j<new_data.length;j++){
           se[j]=new_data[j].num;
           console.log(se[j])
         }
+        this.setData({
+          seat:[]
+       })
         for(let k=0;k<se.length;k++){
         this.setData({
            seat:se
-           //['seat[${j}]']:new_data[j].num
-          //}
         })
         wx.hideLoading()
       }
@@ -83,10 +78,6 @@ Page({
         //console,log(se)
         console.log(that.data.seat)
         console.log('new_data2:',new_data)
-        //let old_data = that.data.allRecords
-        //           that.setData({
-        //         allRecords : new_data.concat(new_data)
-        // })
       })
     
     console.log('new_data3:',new_data)
@@ -110,7 +101,15 @@ Page({
 
 
 
-  loginBtnClick:function(e){
+  loginBtnClick:async function(e){
+    if(this.data.index==''||this.data.index2==''){
+      wx.showToast({
+        title:'信息不全，无法预约！',
+        icon:'none',
+        duration: 2500
+      })
+    }
+    else{
     var user=this.data.ne;
      //  console.log("进入")
     var dex=this.data.index;
@@ -143,7 +142,7 @@ Page({
       month:M,
       day:D
     })
-    db.collection("User")
+    await db.collection("User")
     .where({
       account:user[0].account
     }).update({
@@ -156,7 +155,7 @@ Page({
       console.log(res)
     })
     
-    db.collection("seats")
+    await db.collection("seats")
     .where({
       location:location_,
       num:seat_
@@ -168,10 +167,10 @@ Page({
       console.log("更新后的座位信息:",res)
     })
 
-    wx.showToast({
+    await wx.showToast({
       title: '预约成功',
       icon: 'succes',
-      duration: 1000,
+      duration: 2500,
       mask:true
   })
   wx.navigateBack({
@@ -179,6 +178,7 @@ Page({
         beforePage.onLoad(); // 执行前一个页面的onLoad方法
     }
 });
+    }
   // wx.navigateTo({
   //   url: '../index/index',
   // })
@@ -186,17 +186,15 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
     const accountID=getApp().globalData.account;
     const cont =db.collection('User');
-    cont.where({account:accountID}).get({
-      success:res=>{
+    await cont.where({account:accountID}).get().then(res=>{
         console.log(res.data)
         this.setData({
           ne:res.data
         })
-      }
-    })
+      })
   },
 
   /**
@@ -214,7 +212,7 @@ Page({
     isreserve=''
     isre=[]
     this.setData({
-      index:'5',//房间选项
+      index:'',//房间选项
       index2:'',//座位选项
       seat:[],
       year:'1',
