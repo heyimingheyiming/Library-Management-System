@@ -33,6 +33,7 @@ Page({
     var timestamp = Date.parse(new Date());
     timestamp = timestamp / 1000;
     //获取当前时间  
+    timestamp=timestamp+60*60*24*31;
     var n = timestamp * 1000;
     var date = new Date(n);
     //年  
@@ -41,17 +42,6 @@ Page({
     var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
     //日  
     var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-    M=Number(M);
-    if((M==1||M==3||M==5||M==8||M==10) && D==31){
-      D=30;
-    }
-    if(M==12){
-      Y=Y+1;
-      M=1;
-    }
-    else{
-      M=M+1;
-    }
     this.setData({
       year:Y,
       month:M,

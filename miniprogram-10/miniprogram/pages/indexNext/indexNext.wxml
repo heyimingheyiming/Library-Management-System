@@ -5,7 +5,7 @@
       <view class="xinxi" style="background:url('../../images/input.jpg')" wx:for="{{dataObject}}">姓名：{{item.name}}</view>
       <view class="xinxi" style="background:url('../../images/input.jpg')" wx:for="{{dataObject}}">学号：{{item.account}}</view>
       <view class="xinxi" style="background:url('../../images/input.jpg')" wx:for="{{dataObject}}">学院：{{item.academy}}</view>
-      <view wx:if="{{panduan}}" class="qiandao">签到成功！</view>
+      <view class="qiandao">签到成功！</view>
     </view>
     <view class="word1" wx:if="{{reserveFlag}}">
       <text style="text-decoration:underline;">
@@ -13,8 +13,8 @@
       </text>
     </view>
     <view class="word1" wx:if="{{chaoshi}}">
-      <text style="text-decoration:underline;">
-        预约已超时无法签到，请重新预约座位
+      <text style="text-decoration:underline;margin:5%;">
+        预约已超时，请重新预约座位
       </text>
     </view>
     <view class="bu"><button size="mini" bindtap="fanhui">返回</button></view>

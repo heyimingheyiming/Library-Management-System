@@ -56,13 +56,13 @@ Page({
           })
         }
         else{
-          this.setData({
-            chaoshi:true,
-            xuesheng:false,
-          })
           var pastTime = res.data[0].reserveTime;
           var nowTime = timestamp;
           if(nowTime-pastTime>3600){
+            this.setData({
+              chaoshi:true,
+              xuesheng:false,
+            })
             var id = res.data[0]._id;
             var loca = res.data[0].seatLocation;
             var n = res.data[0].seatNumber;
@@ -72,6 +72,7 @@ Page({
               data:{
                 seatLocation:"",
                 seatNumber:0,
+                reserveTime:0,
               }
             }).then(res=>{
               console.log("success1")
@@ -81,15 +82,14 @@ Page({
               num:n,
             }).get()
             .then(res=>{
-              //var i=res.data[0]._id;
-              //console.log(i);
-              db.collection("seats").doc('fa24ce1a6173c0e501cce1d95c765a9f').update({
+              var i=res.data[0]._id;
+              console.log(i);
+              db.collection("seats").doc(i).update({
                 data:{
                   state:1,
                 }
               }).then(res=>{
                 console.log(res)
-                console.log("座位状态更新成功")
               })
             })
           }

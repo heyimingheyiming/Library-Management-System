@@ -18,8 +18,16 @@ Page({
     var timestamp = Date.parse(new Date());
     timestamp = timestamp / 1000;
     console.log(timestamp);
-    console.log("时间戳转日期:",util.formatTimeTwo(timestamp, 'Y-M-D h:m:s'));
-
+    const _ = db.command;
+    db.collection("User").doc("8937eaa96167969d11121db349ad3aca")
+    .get()
+    .then(res=>{
+      console.log(res.data.borrowingBookid.length)
+      var i=0;
+      for(i;i<res.data.borrowingBookid.length;i++){
+        console.log(res.data.borrowingBookid[i].bookid)
+      }
+    })
   },
 
   /**
