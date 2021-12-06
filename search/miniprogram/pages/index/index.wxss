@@ -1,53 +1,40 @@
-.searchbar-result {
-    margin-top: 0;
-    font-size: 14px;
-  }
-  ::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    color: transparent;
-  }
-  .scroll-view {
-    width: 100%;
-    position: absolute;
-    top: 80rpx;
-    left: 30rpx;
-    background-color: white;
-    -moz-box-shadow: 0px 0px 2px #e2e2e2;
-    -webkit-box-shadow: 0px 0px 2px #e2e2e2;
-    box-shadow: 0px 0px 2px #e2e2e2;
-  }
-  .msg-item {
-    width: 100%;
-  }
-  .user-name {
-    width: 100%;
-    padding: 20rpx;
-    font-size: 33rpx;
-    border-bottom: 1px solid #e2e2e2;
-  }
-  /* 搜索框 */
-  .weui-search-bar__form {
-    position: relative;
-  }
-  .weui-search-bar__input {
-    height: 92rpx;
-  }
-  .weui-icon-search_in-box {
-    top: 22rpx;
-    margin-right: 10px;
-  }
-  .weui-search-bar__cancel-btn {
-    line-height: 70rpx;
-    margin-right: 15px;
-  }
-   
-  .weui-icon-clear {
-    top: 4rpx;
-  }
-  .flex-row {
-    background-color: #fff;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    /* -webkit-box-dire；*/
-  }
+.search{  
+    width: 80%;  
+  }  
+  .search_arr {  
+    border: 1px solid #d0d0d0;  
+    border-radius: 10rpx;  
+    margin-left: 20rpx;  
+  }  
+  .search_arr input{  
+    margin-left: 60rpx;  
+    height: 60rpx;  
+    border-radius: 5px;  
+  }  
+  .bc_text {  
+    line-height: 68rpx;  
+    height: 68rpx;  
+    margin-top: 34rpx;  
+  }  
+    
+  .sousuo {  
+    margin-left: 15rpx;  
+    width: 12%;  
+    line-height: 80%;  
+    text-align: center;  
+    border: 1px solid #9c9494;  
+    border-radius: 10rpx;  
+  }  
+  .page_row{  
+    display: flex;  
+    flex-direction: row  
+  }  
+  .searchcion {  
+    margin: 10rpx 10rpx 10rpx 10rpx;  
+    position: absolute;  
+    left:25rpx;  
+    z-index: 2;  
+    width: 20px;  
+    height: 20px;  
+    text-align: center;  
+  }  
