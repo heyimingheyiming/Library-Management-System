@@ -45,7 +45,11 @@ Page({
     })
   },
 
-
+  goCollection:function(param){
+    wx.navigateTo({
+      url: '/pages/bookShelf/bookShelf',
+    })
+  },
 
   goIdMassage:function(param){
     wx.navigateTo({

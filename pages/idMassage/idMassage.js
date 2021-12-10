@@ -33,7 +33,7 @@ Page({
   },
 
   amend:function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/idChange/idChange'
     })
   },
@@ -41,7 +41,7 @@ Page({
   logout:function(){
     
         //并重定向到登录页面
-        wx.redirectTo({
+        wx.reLanch({
           url: '../index3/index'
         })
       

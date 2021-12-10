@@ -57,8 +57,9 @@ Page({
       }
 
     })
-    wx.redirectTo({
-      url: '../aboutMe/aboutMe'
+    
+    wx.navigateBack({
+      delta:2
     })
   },
 

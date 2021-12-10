@@ -6,6 +6,7 @@
     <text>{{ne[0].account}}</text>
 </view>
     <button bindtap="goBorrowMassage">正在借阅书目</button>
-    <button bindtap="goBorrowedMassage">已归还书目</button>
+    <button bindtap="goBorrowedMassage">历史借阅书目</button>
+    <button bindtap="goCollection">我的书架</button>
     <button bindtap="goIdMassage">身份信息</button>
 </view>
