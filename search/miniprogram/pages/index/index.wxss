@@ -18,6 +18,7 @@
   }  
     
   .sousuo {  
+
     margin-left: 15rpx;  
     width: 12%;  
     line-height: 80%;  
@@ -38,3 +39,24 @@
     height: 20px;  
     text-align: center;  
   }  
+
+.List{
+  padding-top:30px;
+  height:250px;
+  display: flex;
+    color: rgb(0, 0, 0);
+    flex-direction: column;
+    width:100%;
+    background-color: rgb(255, 255, 255);
+}
+
+  .show{
+    height:280px;
+
+
+  }
+
+.show image{
+  width: 206.85px; 
+  height: 280px;
+}

@@ -1,24 +1,15 @@
-// pages/demo1/demo1.js
+// pages/demo2/demo2.js
 const db = wx.cloud.database()
 const Book = db.collection('Book')
 let app=getApp()
-
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        img:"",
         ne:[],
-        book:[],
         name:""
-    },
-
-    jump_to_book:function(e){
-      console.log(e.currentTarget.dataset)
-      wx.navigateTo({
-        url: '/pages/demo2/demo2?name=计算机网络'})
     },
 
     /**
@@ -27,46 +18,11 @@ Page({
     onLoad: function (options) {
         this.name=options.name;
         console.log(this.name)
-        //console.log(options)
-
-        /*
-        Book.where({name:this.name}).get({
-          success:res=>{
-            console.log(res.data)
+        Book.where({name:this.name}).get().then(res=> {
             this.setData({
-              ne:res.data
-            })
-            if(res.data.length==0){
-              console.log("数据库中无该用户记录，请核实account");
-              wx.showToast({
-                title:'图书馆中无此书',
-                icon:'none',
-                duration: 2500
+                ne: res.data
               })
-              }
-              else{
-                console.log(11111)
-              }
-       }
-      })
-      */
-     Book.where({
-      name:/options.name/i
-    })
-     Book.where({
-      name: db.RegExp({
-        regexp:options.name,
-        options:'i',
-    })
-    }).get({
-      success: res => {
-        this.setData({
-          ne: res.data
-        })
-        //console.log(this.ne)
-        console.log(res.data)
-      }
-      })
+            })
     },
 
     /**
@@ -117,4 +73,4 @@ Page({
     onShareAppMessage: function () {
 
     }
-  })
+})

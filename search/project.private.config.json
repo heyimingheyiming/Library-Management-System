@@ -1,65 +1,36 @@
 {
-  "setting": {},
-  "condition": {
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
-      "list": [
-        {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
         },
-        {
-          "name": "pages/getOpenId/index",
-          "pathName": "pages/getOpenId/index",
-          "query": "",
-          "scene": null
+        "game": {
+            "list": []
         },
-        {
-          "name": "pages/deployService/index",
-          "pathName": "pages/deployService/index",
-          "query": "",
-          "scene": null
+        "gamePlugin": {
+            "list": []
         },
-        {
-          "name": "pages/selectRecord/index",
-          "pathName": "pages/selectRecord/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/sumRecordResult/index",
-          "pathName": "pages/sumRecordResult/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/updateRecord/index",
-          "pathName": "pages/updateRecord/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/updateRecordResult/index",
-          "pathName": "pages/updateRecordResult/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/updateRecordSuccess/index",
-          "pathName": "pages/updateRecordSuccess/index",
-          "scene": null
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "db guide",
+                    "pathName": "pages/databaseGuide/databaseGuide",
+                    "query": ""
+                },
+                {
+                    "name": "pages/demo1/demo1",
+                    "pathName": "pages/demo1/demo1",
+                    "query": "name=计算机",
+                    "scene": null
+                },
+                {
+                    "name": "pages/demo2/demo2",
+                    "pathName": "pages/demo2/demo2",
+                    "query": "name=计算机网络",
+                    "scene": null
+                }
+            ]
         }
-      ]
     }
-  }
 }

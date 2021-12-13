@@ -7,18 +7,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name:[]
-
+    name:[],
+    list:[]
   },
-
 
   inputTyping:function(event){
     this.name=event.detail.value
     console.log(this.name)
    },
 
-   search:function(event){
+  search:function(event){
     console.log(this.name)
+    Book.where({
+      name:/this.name/i
+    })
+     
+     Book.where({
+      name: db.RegExp({
+        regexp:this.name,
+        options:'i',
+    })
+    }).get().then(res=> {
+      if(res.data.length==0){
+        wx.showToast({
+          title:'图书馆中无此书',
+          icon:'none',
+          duration: 2500
+        })
+        }
+        else{
+          console.log(11111)
+          wx.navigateTo({
+            url: '/pages/demo1/demo1?name='+this.name+''
+          })
+        }
+    })
+/*
       Book.where({name:this.name}).get().then(res=> {
         if(res.data.length==0){
           console.log("数据库中无该用户记录，请核实account");
@@ -35,15 +59,10 @@ Page({
             })
           }
    })
+*/
+
   },
   
-
-
-
-
-
-
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -63,7 +82,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+   
+      Book.orderBy('read_num','desc').get()
+      .then(res=>{
+        console.log('降序成功',res.data)
+        this.setData({
+          list:res.data
+        })
+      })
+      .catch(err=>{
+        console.log('降序失败')
+      })  
+
+ 
   },
 
   /**
