@@ -12,13 +12,15 @@ Page({
         img:"",
         ne:[],
         book:[],
-        name:""
+        name:"",
+        post_Id:"",
     },
 
-    jump_to_book:function(e){
-      console.log(e.currentTarget.dataset)
+    jump_to_book:function(event){
+      this.post_Id=event.currentTarget.dataset;
+      console.log(this.post_Id)
       wx.navigateTo({
-        url: '/pages/demo2/demo2?name=计算机网络'})
+        url: '/pages/demo2/demo2?bookId='+this.post_Id.postid+''})
     },
 
     /**

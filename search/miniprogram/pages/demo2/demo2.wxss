@@ -1,7 +1,6 @@
 /* pages/demo1/demo1.wxss */
 .container{
     font-size:15px;
-    
     display:flex;
     flex-direction: column;
     width:100%;
@@ -9,17 +8,16 @@
 
 .borrowed{
    
-    border:0.5px solid rgb(163, 161, 161);
+    /*border:0.5px solid rgb(163, 161, 161);*/
     display: flex;
     color: rgb(0, 0, 0);
     flex-direction: column;
     width:100%;
-    height:200px;
+    height:210px;/*200px*/
     background-color: rgb(255, 255, 255);
 }
 
 .book{
-
     border-top:0.5px solid rgb(163, 161, 161);
     display:flex;
     flex-direction: row;
@@ -27,7 +25,7 @@
     width:100%;
     padding-top:20px;
     padding-left:12px;
-    
+    line-height:160%;
 }
 
 .book image{
@@ -54,6 +52,35 @@
     padding-bottom: 10px;
 }
 
-.bookshelf{
-    padding-bottom:20px;
+.shelf{
+    display: flex;
+    border:0.5px solid rgb(163, 161, 161);
+    padding-bottom:10px;
+    align-items : center;
+}
+
+.bookshelf {
+    width: 40%;
+    margin-top: 20rpx;
+    background-color: rgb(143, 233, 134);
+    color: rgb(7, 7, 7);
+    border-radius: 98rpx; 
+    text-align: center;
+  }
+
+.container1{
+    padding-left:5px;
+    padding-top:5px;
+    font-size:15px;
+    font-weight:700;
+}
+.content{
+    text-indent : 20px;
+    padding-top:5px;
+    padding-right: 8px;
+    padding-left:10px;
+    padding-bottom:10px;
+    line-height:150%;
+    font-size:13.5px;
+    font-weight:300;
 }

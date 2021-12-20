@@ -27,7 +27,7 @@
                 {
                     "name": "pages/demo2/demo2",
                     "pathName": "pages/demo2/demo2",
-                    "query": "name=计算机网络",
+                    "query": "bookId=1937",
                     "scene": null
                 }
             ]
