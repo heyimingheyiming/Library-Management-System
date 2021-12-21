@@ -1,0 +1,79 @@
+/* pages/demo1/demo1.wxss */
+
+
+.id-massage{
+  display: flex;
+  flex-direction: column;
+}
+
+.loginbtn {
+  width: 100%;
+  background-color: rgb(188, 243, 238);
+  color:rgb(0, 174, 255);
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  /* border-radius: 98rpx; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .button {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.button::after {
+  border-radius: 98rpx;
+  border: 0; 
+} */
+.name{
+  background-color: rgba(255, 255, 255, 0.856);
+  border-radius:8px ;
+  padding: 8px 10px;
+   margin-top: 32px;
+  margin-left: 20px; 
+  width:80%;
+  height:20px;
+  align-items: center;
+  justify-content: center;
+}
+.view_fengexian {
+  width: 96%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx 2% 0rpx 2%;
+}
+
+/* 两个view的样式 */
+.view_fengexian view {
+  width: 33%;
+  height: 2rpx;
+  background: linear-gradient(to right, #ead6ee, #a0f1ea);
+}
+
+/* 字体的样式 */
+.text_fengexian {
+  font-size: 32rpx;
+  color: rgb(253, 143, 143);
+  margin: 20rpx 2% 0rpx 2%;
+}
+.cc{
+  /* margin: 2rpx 2% 0rpx 2%; */
+  padding: 8px 10px;
+   margin-top: 32px;
+  margin-left: 2%; 
+  margin-right: 2%;
+  background-color: #a0f1ea; 
+  height:100%;
+}
+/* .container{
+  margin: 2rpx 2% 0rpx 2%;
+  background-color: #a0f1ea; 
+  height:1000%;
+} */

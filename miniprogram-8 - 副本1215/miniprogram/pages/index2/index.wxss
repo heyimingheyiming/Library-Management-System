@@ -1,0 +1,62 @@
+.search{  
+    width: 80%;  
+  }  
+  .search_arr {  
+    border: 1px solid #d0d0d0;  
+    border-radius: 10rpx;  
+    margin-left: 20rpx;  
+  }  
+  .search_arr input{  
+    margin-left: 60rpx;  
+    height: 60rpx;  
+    border-radius: 5px;  
+  }  
+  .bc_text {  
+    line-height: 68rpx;  
+    height: 68rpx;  
+    margin-top: 34rpx;  
+  }  
+    
+  .sousuo {  
+
+    margin-left: 15rpx;  
+    width: 12%;  
+    line-height: 80%;  
+    text-align: center;  
+    border: 1px solid #9c9494;  
+    border-radius: 10rpx;  
+  }  
+  .page_row{  
+    display: flex;  
+    flex-direction: row  
+  }  
+  .searchcion {  
+    margin: 10rpx 10rpx 10rpx 10rpx;  
+    position: absolute;  
+    left:25rpx;  
+    z-index: 2;  
+    width: 20px;  
+    height: 20px;  
+    text-align: center;  
+  }  
+
+.List{
+  padding-top:30px;
+  height:250px;
+  display: flex;
+    color: rgb(0, 0, 0);
+    flex-direction: column;
+    width:100%;
+    background-color: rgb(255, 255, 255);
+}
+
+  .show{
+    height:280px;
+
+
+  }
+
+.show image{
+  width: 206.85px; 
+  height: 280px;
+}

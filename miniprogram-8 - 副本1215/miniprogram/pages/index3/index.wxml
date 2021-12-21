@@ -1,0 +1,29 @@
+<view class="total" style="background:url('../../images/03\(2\).jpg')">
+<view class="content">
+
+<view class="account"style="margin-top: 10% ">
+<!-- <view class="title">账号</view> -->
+<image class="nameImage" src="/images/登录 (1).png"></image> 
+<view class="num"><input bindinput="inputName" placeholder="用户名"  placeholder-style="color:grey;"/></view>
+</view>
+
+<view class="hr"></view>
+
+<view class="account" style="margin-top: 10% ">
+<!-- <view class="title">密码</view> -->
+<image class="nameImage" src="/images/密码.png"></image> 
+<view class="num">
+<input bindinput="inputPassword" placeholder="密码" placeholder-style="color:grey;"password/></view>
+</view>
+<!-- <view class="account"> -->
+<!-- <view class="inputView" style="margin-top: 10% ">
+<input class="input" type="number" placeholder="请输入密码" placeholder-style="color:white;" bindinput="listenerPhoneInput" />
+</view> -->
+
+
+<view class="hr"></view>
+<button class="btn"  style="width:400rpx;" bindtap="login">登录</button> 
+<view class="hr"></view>
+<button class="btn"   style="width:400rpx;" bindtap="modify">修改密码</button>
+</view>
+</view>

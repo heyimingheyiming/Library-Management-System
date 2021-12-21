@@ -1,0 +1,22 @@
+/* pages/borrowedMassage/borrowedMassage.wxss */
+
+.container{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.borrowed{
+    display: flex;
+    color: cornsilk;
+    flex-direction: column;
+    width:100%;
+    background-color: rgb(139, 171, 230);
+}
+
+.book{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+}

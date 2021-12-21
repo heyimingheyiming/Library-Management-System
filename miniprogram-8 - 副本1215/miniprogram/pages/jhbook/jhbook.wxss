@@ -1,0 +1,39 @@
+.juzhong{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width: 100%;
+  height: 100vh;
+}
+
+.input1{
+  width: 200px;
+  height: 40px; 
+  border: 1px solid rgb(81, 153, 221);
+  border-radius: 5px;
+  margin-top: 100rpx;
+}
+
+.input2{
+  width: 200px;
+  height: 40px; 
+  border: 1px solid rgb(81, 153, 221);
+  border-radius: 5px;
+  margin-top: 40rpx;
+}
+
+.bu{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;  
+  text-align: center;
+ }
+
+.in{
+  font-family: sans-serif;
+  font-size:68rpx;
+  color: rgb(255, 249, 249);
+  margin-top: 50px;
+  margin-left: -10px;
+}

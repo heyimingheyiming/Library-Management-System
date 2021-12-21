@@ -1,0 +1,59 @@
+<!-- <view class="name">姓名：
+<input class="input" name="userName" placeholder="请输入姓名"
+bindinput="userNameInput"/>
+</view>
+
+<view class="Id">学号：
+<input class="input" name="userId" placeholder="请输入学号"
+bindinput="userIdInput"/>
+</view>
+
+<view class="telePhone">联系方式：
+<input class="input" name="telePhone" placeholder="请输入联系方式"
+bindinput="telePhoneInput"/>
+</view> -->
+<view class='container' >
+  <view class="view_fengexian">
+	<view ></view>
+	<text class="text_fengexian">*座位预约系统*</text>
+	<view ></view>
+</view>
+<view class="cc">
+<view class ='name'>
+   <text>姓名: </text>
+  <text>{{ne[0].name}}</text> 
+  </view>
+<view class ='name'>
+<view class='id-massage'>
+  </view>
+  <text>学号: </text>
+  <text>{{ne[0].account}}</text>
+  </view>
+  <view class ='name'>
+  <view class='id-massage'>
+  </view>
+  <text>联系电话: </text>
+    <text>{{ne[0].phone}}</text>
+  <view class='id-massage'>
+</view>
+</view>
+<view class ='name'>
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      房间选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+<view class ='name'>
+  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{seat}}">
+    <view class="picker">
+      座位选择：{{seat[index2]}}
+    </view>
+  </picker>
+</view>
+
+<view class="viewName" style="background-color:#fbf9fe">
+  <button class="loginbtn" bindtap="loginBtnClick">预约</button>
+</view>
+</view>
+</view>

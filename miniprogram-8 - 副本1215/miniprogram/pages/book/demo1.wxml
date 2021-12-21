@@ -1,0 +1,18 @@
+<view class='container' >
+
+<view class='borrowed'>
+    <text class="chaxunjieguo">查询结果：</text>
+    <view class='book' wx:for="{{ne}}" wx:for-index="index" bindtap="jump_to_book">
+        <image style="width: 88.65px; height: 120px" src='{{ne[index].img}}' mod='heightFix'></image>
+        <view class='book_text'>
+        <text class="book_name">《{{ne[index].name}}》</text>
+        <text>作者：{{ne[index].writer}}</text>
+        <text>出版社：{{ne[index].publisher}}</text>
+        <text>馆藏：{{ne[index].book_num}} / 可借: {{ne[index].book_num-ne[index].borrow_num}}</text>
+        <text>ID：{{ne[index].bookId}}</text>
+        </view>
+      <!--这是单行注释<text> * </text>--> 
+    </view>
+</view>
+
+</view>

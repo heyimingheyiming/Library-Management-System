@@ -1,0 +1,15 @@
+<view class="juzhong" style="background:url('../../images/b2.jpeg')">
+  <view wx:if="{{jieshu}}" class="in"><text>借书</text></view>
+  <view wx:if="{{huanshu}}" class="in"><text>还书</text></view>
+  <form bindsubmit="btnbook">
+      <input name="account" class="input1" style="background:url('../../images/input.jpg')" placeholder=" 请输入学生学号"/> 
+      <input name="bookid" class="input2" style="background:url('../../images/input.jpg')" placeholder=" 请输入图书编号"/>
+      <view class="bu">
+        <button size="mini" form-type="submit">确认</button>
+      </view>
+      <view class="bu">
+        <button size="mini" bindtap="fanhui">返回主菜单</button>
+      </view>
+  </form>
+</view>
+

@@ -1,0 +1,22 @@
+<view class="juzhong" style="background:url('../../images/bb.jpg')">
+<view class="button-sp-area"  >
+  <swiper autoplay interval="1000" indicator-dots indicator-color="#f00" indicator-active-color="#f00">
+	<swiper-item wx:for="{{banners}}">
+		<image src="/img/{{item}}"></image>
+	</swiper-item>
+</swiper>
+<button class='btn1' open-type='openSetting' bindtap='reserveBtn'>预约座位</button>
+
+<button class='btn1' bindtap="MessageBtn">查看预约信息</button>
+
+<button class='btn1' bindtap="freeBtn">释放座位</button>
+
+<!-- <view wx:for="{{dataObj}}">{{item.number}}-{{item.state}}</view> -->
+</view>
+
+<!-- <button type="primary" bindtap="addData">插入一条数据</button> -->
+
+<!-- <button type="primary" bindtap='reserveBtn'>跳转页面</button> -->
+<!-- <button type="primary" bindtap="getData">预约座位</button>
+<view wx:for="{{dataObj}}">{{item.number}}-{{item.state}}</view> -->
+</view>

@@ -1,0 +1,24 @@
+<view class='page_row' bindtap="suo">  
+      <view class="search">  
+        <view class="df search_arr">  
+          <icon class="searchcion" size='20' type='search'></icon>  
+          <input class=""  bindinput="inputTyping" placeholder="请输入书籍关键字" value="{{searchValue}}"/>  
+        </view>  
+      </view>  
+      
+      <button class="sousuo"  bindtap="search">搜索</button> 
+    </view>  
+
+    <view class='List'>
+    <text>热门推荐：</text>
+    <view class='list' wx:for="{{list}}" wx:for-index="index">
+        <text>{{index+1}}、《{{list[index].name}}》</text>
+
+      </view>
+    </view>
+
+    <swiper class='show' indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" autoplay interval="3000" circular previous-margin="50px" next-margin="50px">
+    <swiper-item class='show1' wx:for="{{list}}" wx:for-index="index">
+    <image src='{{list[index].img}}' mode="heightFix"></image>
+    </swiper-item>
+    </swiper>

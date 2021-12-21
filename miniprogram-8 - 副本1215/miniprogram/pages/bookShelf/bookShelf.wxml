@@ -1,0 +1,13 @@
+<!--pages/myCollection/myCollection.wxml-->
+<view class='container' >
+    <view class='shelf'>
+    <text>我的书架：</text>
+    <view class='book' wx:for="{{shelf}}" wx:for-index="index">
+        <text>《{{shelf[index].name}}》</text>
+        <text>作者：{{shelf[index].writer}}</text>
+        <text>ID：{{shelf[index].bookId}}</text>
+        <button bindtap="delete" data-id="{{shelf[index].bookId}}" data-index="{{index}}">删除</button>
+        <text> * </text>
+    </view>
+    </view>
+</view>

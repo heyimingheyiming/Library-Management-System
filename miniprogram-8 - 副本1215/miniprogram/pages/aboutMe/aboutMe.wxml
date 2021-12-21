@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class='container' > 
+<!-- <view class='id-massage'>
+    <text>{{ne[0].name}}</text>
+    <text>{{ne[0].academy}}</text>
+    <text>{{ne[0].account}}</text>
+</view>
+    <button bindtap="goBorrowMassage">正在借阅书目</button>
+    <button bindtap="goBorrowedMassage">历史借阅书目</button>
+    <button bindtap="goCollection">我的书架</button>
+    <button bindtap="goIdMassage">身份信息</button>
+</view> --> 
+<view class="header">
+  <!-- 代码 -->
+  <image class="bg_ware" src="https://codermoyv.gitee.io/coder-moyv/assets/images/wechat/bg_wave.gif"></image>
+  <view class="login-icon"> 
+<image class="login-img" src="/images/个人中心 (1).png"></image> 
+</view> 
+  <view class='id-massage'>
+  <text>{{ne[0].name}}</text>
+    <text>{{ne[0].academy}}</text>
+    <text>{{ne[0].account}}</text>
+    </view>
+</view>
+    <button bindtap="goBorrowMassage" >正在借阅书目</button>
+    <button bindtap="goBorrowedMassage">历史借阅书目</button>
+    <button bindtap="goCollection">我的书架</button>
+    <button bindtap="goIdMassage">身份信息</button>
+ </view>
+

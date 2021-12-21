@@ -1,0 +1,21 @@
+<view class="total" style="background:url('../../images/b2.jpeg')">
+    <view class="waibu"></view>
+    <text class="word">学生签到</text>
+    <view wx:if="{{xuesheng}}">
+      <view class="xinxi" style="background:url('../../images/input.jpg')" wx:for="{{dataObject}}">姓名：{{item.name}}</view>
+      <view class="xinxi" style="background:url('../../images/input.jpg')" wx:for="{{dataObject}}">学号：{{item.account}}</view>
+      <view class="xinxi" style="background:url('../../images/input.jpg')" wx:for="{{dataObject}}">学院：{{item.academy}}</view>
+      <view class="qiandao">签到成功！</view>
+    </view>
+    <view class="word1" wx:if="{{reserveFlag}}">
+      <text style="text-decoration:underline;">
+        未查询到预约信息，请预约座位
+      </text>
+    </view>
+    <view class="word1" wx:if="{{chaoshi}}">
+      <text style="text-decoration:underline;margin:5%;">
+        预约已超时，请重新预约座位
+      </text>
+    </view>
+    <view class="bu"><button size="mini" bindtap="fanhui">返回</button></view>
+</view>
