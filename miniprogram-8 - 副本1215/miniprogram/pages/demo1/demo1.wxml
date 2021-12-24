@@ -52,8 +52,8 @@ bindinput="telePhoneInput"/>
   </picker>
 </view>
 
-<view class="viewName" style="background-color:#fbf9fe">
-  <button class="loginbtn" bindtap="loginBtnClick">预约</button>
+<view class="viewName" >
+  <button class="loginbtn" bindtap= "loginBtnClick"  style="width:200px;">预约</button>
 </view>
 </view>
 </view>

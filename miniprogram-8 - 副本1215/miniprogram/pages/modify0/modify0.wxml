@@ -1,4 +1,5 @@
 <!--pages/modify0/modify0.wxml-->
+<view class="juzhong" style="background:url('../../images/b2.jpeg')">
 <view class="content">
 
 <view class="account">
@@ -34,4 +35,4 @@
 <view class="hr"></view>
 
 </view>
-
+</view>

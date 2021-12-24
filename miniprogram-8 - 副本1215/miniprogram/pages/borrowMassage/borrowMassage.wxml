@@ -1,14 +1,14 @@
 <!--pages/borrowMassage/borrowMassage.wxml-->
 <view class='container' >
 <view class='borrowing'>
-    <text>正在借阅中：</text>
+    <text class="zhengzaijieyue">正在借阅中：</text>
     <view class='book' wx:for="{{borrowing}}" wx:for-index="index">
-        <text>《{{borrowing[index].name}}》</text>
-        <text>作者：{{borrowing[index].writer}}</text>
-        <text>借阅时间：{{time[index]}}</text>
-        <text>ID：{{borrowing[index].bookId}}</text>
-        <text>（请在{{backtime[index]}}前归还）</text>
-        <text> * </text>
+        <text class="b1">《{{borrowing[index].name}}》</text>
+        <text class="c1">书籍作者：{{borrowing[index].writer}}</text>
+        <text  class="c1">借阅时间：{{time[index]}}</text>
+        <text  class="c1">书籍ID：{{borrowing[index].bookId}}</text>
+        <text  class="d1">（请在{{backtime[index]}}前归还）</text>
+        <!-- <text class="d1"> * </text> -->
     </view>
 </view>
 </view>

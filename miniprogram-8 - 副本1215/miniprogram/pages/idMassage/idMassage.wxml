@@ -1,7 +1,10 @@
 <!--pages/idMassage/idMassage.wxml-->
 <view class='container'>
+    <view class='idMessage'>
+        <view class ="c1">
     <text>身份信息：</text>
-    <button bindtap="amend" class="amend">修改信息</button>
+    <button bindtap="amend" class="amend" size="mini">修改信息</button>
+        </view>
     <view class="id">
         <text>姓名：{{ne[0].name}}</text>
         <text>账号：{{ne[0].account}}</text>
@@ -9,6 +12,6 @@
         <text>邮箱：{{ne[0].email}}</text>
         <text>电话：{{ne[0].phone}}</text>
     </view>
+<button bindtap="logout" class="logout">退出登录</button>
 </view>
-
-<button bindtap="logout">退出登录</button>
+</view>

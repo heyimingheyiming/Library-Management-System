@@ -1,12 +1,12 @@
 <!--pages/borrowedMassage/borrowedMassage.wxml-->
 <view class='container' >
     <view class='borrowed'>
-    <text>曾经借阅过：</text>
+    <text class="b1">曾经借阅过：</text>
     <view class='book' wx:for="{{borrowed}}" wx:for-index="index">
-        <text>《{{borrowed[index].name}}》</text>
-        <text>作者：{{borrowed[index].writer}}</text>
-        <text>ID：{{borrowed[index].bookId}}</text>
-        <text> * </text>
+        <text class="c1">《{{borrowed[index].name}}》</text>
+        <text>书籍作者：{{borrowed[index].writer}}</text>
+        <text>书籍ID：{{borrowed[index].bookId}}</text>
+        <!-- <text> * </text> -->
     </view>
     </view>
 </view>

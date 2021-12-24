@@ -1,14 +1,31 @@
 <!--pages/idChange/idChange.wxml-->
 <view class='container'>
     <view class="id">
+        <view class='id-massage'>
         <text>姓名：{{ne[0].name}}</text>
+        </view>
+        <view class='id-massage'>
         <text>账号：{{ne[0].account}}</text>
+        </view>
+        <view class='id-massage'>
         <text>学院：{{ne[0].academy}}</text>
+        </view>
+        <view class='id-massage'>
         <text>邮箱：</text>
         <input type="text" placeholder="请输入你的邮箱" 	bindinput="changeemail" value="{{ne[0].email}}" confirm-type="done"></input>
-        <text>电话：</text>
-        <input type="number" placeholder="请输入你的电话号码" 	bindinput="changephone" value="{{ne[0].phone}}"  maxlength="11" confirm-type="done"></input>
+        <!-- </view>
+        <view class="view_fengexian">
+        <view ></view> -->
+        </view>
+        <view class='id-massage'>
+        <!-- <text>电话：</text> -->
+        <!-- <view class="title">电话：</view> -->
+       <view class="num" >电话：<input type="number" bindinput="changephone" value="{{ne[0].phone}}" confirm-type="done"></input>
+        </view>
+        </view>
+        <button bindtap="ok">确认修改</button>
     </view>
+    <!-- <button bindtap="ok">确认修改</button> -->
 </view>
 
-<button bindtap="ok">确认修改</button>
+
